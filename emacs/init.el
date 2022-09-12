@@ -72,6 +72,8 @@ backup-directory-alist `(("." . ,(concat user-emacs-directory "backups")))
 
 ;;Only define macros we need for the major mode we're in
 ;;Latex
+
+;;Define the macros here
 (if (eq major-mode 'tex)
     ;;Enviornments
     (fset 'definition
@@ -86,6 +88,10 @@ backup-directory-alist `(("." . ,(concat user-emacs-directory "backups")))
   (fset 'intuition
    (kmacro-lambda-form [?\\ ?b ?e ?g ?i ?n ?\{ ?I ?n ?t ?u ?i ?t ?i ?o ?n ?\} ?\[ ?\] ?\C-m ?\\ ?e ?n ?d ?\{ ?i ?n ?t ?u ?i ?\C-? ?\C-? ?\C-? ?\C-? ?\C-? ?I ?n ?t ?u ?i ?t ?i ?o ?n ?\} ?\C-\[ ?\[ ?1 ?\; ?5 ?D ?\C-\[ ?\[ ?1 ?\; ?5 ?D ?\C-\[ ?O ?D ?\C-m] 0 "%d"))
 
+  (fset 'math
+   (kmacro-lambda-form [?$ ?  ?$ ?\C-\[ ?O ?D ?\C-\[ ?O ?D] 0 "%d"))
+
+
   ;;Text styles
   (fset 'bold
    (kmacro-lambda-form [?\\ ?t ?e ?x ?t ?b ?f ?\{ ?\}] 0 "%d"))
@@ -97,7 +103,20 @@ backup-directory-alist `(("." . ,(concat user-emacs-directory "backups")))
    (kmacro-lambda-form [?\\ ?t ?e ?x ?t ?t ?t ?\{ ?\}] 0 "%d"))
 
   (fset 'uline
-   (kmacro-lambda-form [?\\ ?u ?n ?d ?e ?r ?l ?i ?n ?e ?\{ ?\}] 0 "%d"))  
+	(kmacro-lambda-form [?\\ ?u ?n ?d ?e ?r ?l ?i ?n ?e ?\{ ?\}] 0 "%d"))
+
+  ;Then bind them to keys here
+  (global-set-key (kbd "C-x C-k d") (execute-kbd-macro (symbol-function 'definition)))
+  (global-set-key (kbd "C-x C-k q") (execute-kbd-macro (symbol-function 'equation)))
+  (global-set-key (kbd "C-x C-k x") (execute-kbd-macro (symbol-function 'example)))
+  (global-set-key (kbd "C-x C-k i") (execute-kbd-macro (symbol-function 'intuition)))
+  (global-set-key (kbd "C-x C-k m") (execute-kbd-macro (symbol-function 'math)))
+
+  ;;Make the third keypress for styling C-<key> because that's how those styles are usually defined everywhere else
+  (global-set-key (kbd "C-x C-k C-i") (execute-kbd-macro (symbol-function 'ital)))
+  (global-set-key (kbd "C-x C-k C-b") (execute-kbd-macro (symbol-function 'bold)))
+  (global-set-key (kbd "C-x C-k C-u") (execute-kbd-macro (symbol-function 'uline)))
+  (global-set-key (kbd "C-x C-k C-t") (execute-kbd-macro (symbol-function 'texttt)))
   )
 
 ;;C
