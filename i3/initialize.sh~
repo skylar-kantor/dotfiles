@@ -1,0 +1,3 @@
+if [$HOST == "icarus"] ; then
+    nitrogen --restore
+    ./layout

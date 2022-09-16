@@ -37,9 +37,6 @@ font pango:isoveka Slab 12
 #Start picom, for transparency and such
 exec picom
 
-#Set the background (Cronus)
-exec cd ~/Downloads && feh --bg-fill kiki.jpg
-
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
@@ -70,17 +67,13 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # KEYBINDS # 
 ############
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec ~/.local/kitty.app/bin/kitty
 
 # kill focused window
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-<<<<<<< HEAD
-bindsym $mod+r exec  "dmenu_run -nf '#182943' -nb '#00BEDE' -sb '#085171' -sf '#CCDCD1' -fn 'monospace-10' -p 'Run -->'"
-=======
-bindsym $mod+r exec "dmenu_run -nf '#C3BAAB' -nb '#213E20' -sb '#86B227' -sf '#665C53' -fn 'monospace-10' -p 'dmenu prompt ->'"
->>>>>>> 7a6bab9d3148cbf80f2aad01f2da9a5faa64511d
+bindsym $mod+r exec "dmenu_run -nf '#C3BAAB' -nb '#213E20' -sb '#86B227' -sf '##665C53' -fn 'monospace-10' -p 'dmenu prompt ->'"
 
 # change focus
 bindsym $mod+j focus left
@@ -206,26 +199,13 @@ bindsym $mod+Ctrl+Shift+l exec --no-startup-id $i3lockwall
 ########
 # GAPS #
 ########
-#Not used on Cronus
-# gaps inner 10
-# gaps outer 0
-# smart_gaps on
+gaps inner 10
+gaps outer 0
+smart_gaps on
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-<<<<<<< HEAD
-	colors {
-    background #192938
-    statusline #D3EEE9
-    separator  #598A98
-
-    focused_workspace  #756679 #756679 #D3EEE9
-    active_workspace   #90D56A #90D56A #456B78
-    inactive_workspace #90D56A #90D56A #888888
-    urgent_workspace   #2F343A #F379A0 #174459
-    binding_mode       #2F343A #F379A0 #174459
-=======
 colors {
     background #6F867E
     statusline #D7C59F
@@ -236,23 +216,9 @@ colors {
     inactive_workspace #6E7065 #6E7065 #C7B693
     urgent_workspace   #312C29 #9A3E41 #D8C6A0
     binding_mode       #312C29 #9A3E41 #D8C6A0
->>>>>>> 7a6bab9d3148cbf80f2aad01f2da9a5faa64511d
   }
         status_command i3status --config ~/.config/i3/i3status.conf
 }
-##########
-# COLORS #
-##########
-# class                 border  bground text    indicator child_border
-client.focused          #47A358 #449B54 #172740 #449B54   #449B54
-client.focused_inactive #484E50 #5F676A #172740 #484E50   #5F676A
-client.unfocused        #9BE594 #89CB83 #172740 #89CB83   #89CB83
-client.urgent           #172740 #E96E9A #172740 #E96E9A   #E96E9A
-client.placeholder      #02D5FF #02BFE5 #172740 #02BFE5   #02BFE5
-
-<<<<<<< HEAD
-client.background		#172740
-=======
 
 
->>>>>>> 7a6bab9d3148cbf80f2aad01f2da9a5faa64511d
+
