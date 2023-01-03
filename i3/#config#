@@ -52,6 +52,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- $i3lockwall --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+
+
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -73,7 +76,7 @@ bindsym $mod+Return exec ~/.local/kitty.app/bin/kitty
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+r exec "dmenu_run -nf '#C3BAAB' -nb '#213E20' -sb '#86B227' -sf '##665C53' -fn 'monospace-10' -p 'dmenu prompt ->'"
+bindsym $mod+r exec "dmenu_run -nf '#C3BAAB' -nb '#213E20' -sb '#86B227' -sf '#665C53' -fn 'monospace-10' -p 'dmenu prompt ->'"
 
 # change focus
 bindsym $mod+j focus left
