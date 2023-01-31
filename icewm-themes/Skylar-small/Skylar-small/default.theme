@@ -1,0 +1,97 @@
+ThemeDescription="Minimalistic, flat theme for IceWM, inspired by Windows 8 and based on Ambiance for IceWM theme for Ubuntu"
+ThemeAuthor="vroby65 | vroby.mail@gmail.com | tweaked for antiX 19 by missTell"
+Look=flat
+RolloverButtonsSupported=0
+TitleBarHeight=27
+BorderSizeX=0
+BorderSizeY=0
+DlgBorderSizeX=0
+DlgBorderSizeY=0
+TitleButtonsRight="xmi"
+TitleButtonsSupported="xmis"
+TitleBarJustify=50
+RoundCorners=0
+#DesktopBackgroundColor="#ea4c88"
+MenuIconSize=16		        # Menu. 
+SmallIconSize=16			# Taskbar & Titlebar. Taskbar height = height of linux.xpm. Titlebar height = TitleBarHeight in *.theme
+LargeIconSize=24			# Quickswitch window
+HugeIconSize=32				# ?  Cannot identify what it applies to
+ShowMenuButtonIcon=1			# Show application icon on menuButton
+
+# --------------------
+# Desktop
+# --------------------
+DesktopBackgroundImage=""		# Prevent IceWM showing a background image
+DesktopBackgroundColor=""		# Prevent IceWM showing a background colour
+
+Gradients="menusel.xpm taskbarbg.xpm taskbuttonactive.xpm taskbuttonminimized.xpm"
+
+TitleFontNameXft="ubuntu:size=11,sans-serif:size=10"
+ActiveTaskBarFontNameXft="ubuntu:size=11,Sans:size=10:bold"
+NormalTaskBarFontNameXft="ubuntu:size=11,Sans:size=10"
+ListBoxFontNameXft = "ubuntu:size=11,Sans:size=10"
+ToolTipFontNameXft = "ubuntu:size=11,Sans:size=10"
+ClockFontNameXft = "ubuntu:size=11,Sans:size=10"
+MenuFontNameXft = "ubuntu:size=11,Sans:size=10"
+StatusFontNameXft = "ubuntu:size=11,Sans:size=10"
+QuickSwitchFontNameXft = "ubuntu:size=11,Sans:size=10"
+
+ColorClock=""
+ColorClockText="#bAbAbA"
+
+ColorNormalBorder="#192A3D"
+ColorActiveBorder="#192A3D"
+
+ColorNormalTitleBar="#2D4858"
+ColorNormalTitleBarText="#807d78"
+ColorActiveTitleBar="#2D4858"
+ColorActiveTitleBarText="#dfdbd2"
+
+ColorNormalMenu="#2d4858"
+ColorActiveMenuItem="#2d4858"
+ColorNormalMenuItemText="#dfdbd2"
+ColorActiveMenuItemText="#ffffff"
+ColorDisabledMenuItemText="#7A7A7A"
+
+ColorInput="white"
+ColorInputText="black"
+ColorInputSelection="#1d62ae"
+ColorInputSelectionText="white"
+
+ColorNormalButton="#2d4858"
+ColorNormalButtonText="#dfdbd2"
+
+ColorDefaultTaskBar="#2d4858"
+ColorNormalTaskBarApp="#2d4858"
+ColorNormalTaskBarAppText="#dfdbd2"
+ColorActiveTaskBarApp="#1d62ae"
+ColorActiveTaskBarAppText="white"
+ColorMinimizedTaskBarApp="#2d4858"
+ColorMinimizedTaskBarAppText="#7A7A7A"
+ColorActiveWorkspaceButton="#7D9628"
+ColorActiveWorkspaceButton="#7D9628"
+ColorActiveWorkspaceButtonText="white"
+PagerShowBorders=0
+
+ColorClock="#2d4858"
+ColorClockText="#dfdbd2"
+
+ColorToolTip="black"
+ColorToolTipText="white"
+
+ColorListBox="#3d3d3d"
+ColorListBoxText="white"
+ColorListBoxSelection="#1d62ae"
+ColorListBoxSelectionText=white
+
+ColorMoveSizeStatus="1d62ae"
+ColorMoveSizeStatusText="white"
+
+ColorQuickSwitch="#3d3d3d"
+ColorQuickSwitchActive="#1d62ae"
+ColorQuickSwitchText="#dfdbd2"
+ColorQuickSwitchSelectionText="white"
+
+ColorDialog="#3d3d3d"
+ColorLabel="#3d3d3d"
+ColorLabelText="#dfdbd2"
