@@ -187,17 +187,6 @@
        ("note" . ?n)
        ("idea" . ?i)))
 
-
-;;(require 'org-habit)
-
-
-(setq org-superstar-headline-bullets-list '("◉" "○" "●" "○" "●" "○" "●"))
-(setq org-agenda-start-with-log-mode t)
-(setq org-agenda-files '("~/OrgFiles/birthdays.org" "~/OrgFiles/CSE404.org" "~/OrgFiles/CSE474.org"))
-(setq org-log-into-drawer t)
-(advice-add 'org-refile :after 'org-save-all-org-buffers)
-
-
  ;; Configure custom agenda views
   (setq org-agenda-custom-commands
    '(("d" "Dashboard"
@@ -245,6 +234,15 @@
       (todo "CANC"
             ((org-agenda-overriding-header "Cancelled Projects")
              (org-agenda-files org-agenda-files)))))))
+;;(require 'org-habit)
+
+
+(setq org-superstar-headline-bullets-list '("◉" "○" "●" "○" "●" "○" "●"))
+(setq org-agenda-start-with-log-mode t)
+(setq org-agenda-files '("~/OrgFiles/*"))
+(setq org-log-into-drawer t)
+(advice-add 'org-refile :after 'org-save-all-org-buffers)
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

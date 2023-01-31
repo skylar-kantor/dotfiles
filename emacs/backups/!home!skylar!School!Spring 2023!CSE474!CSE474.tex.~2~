@@ -1,0 +1,121 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{multirow,booktabs}
+\usepackage[table, dvipsnames]{xcolor}
+\usepackage{fullpage}
+\usepackage{setspace}
+\usepackage{calc}
+\usepackage{multicol}
+\usepackage{cancel}
+\usepackage{empheq}
+\usepackage{framed}
+\usepackage{geometry}
+\geometry{ margin=1in}
+%\usepackage{pygmentize}
+\usepackage{tikz}
+
+
+%Shading colors for definitions, equations, and examples
+\colorlet{defn}{cyan} 
+\colorlet{eqn}{orange}
+\colorlet{exam}{green}
+\colorlet{intu}{WildStrawberry}
+\colorlet{lemma}{Yellow}
+\colorlet{thmline}{WildStrawberry}
+\colorlet{thmin}{Lavender}
+
+%theorems
+\usepackage{thmtools}
+\usepackage[framemethod=TikZ]{mdframed}
+\mdfsetup{skipabove=1em,skipbelow=0em}
+
+
+\declaretheoremstyle[
+  numbered = no, mdframed={
+    linewidth=2pt,rightline=false,topline=false,linecolor=defn, backgroundcolor=defn!15
+  }
+]{thmdef}
+
+\declaretheoremstyle[
+  numbered = no, mdframed={
+    linewidth=2pt,rightline=false,topline=false,linecolor=black, backgroundcolor=black!15
+  }
+]{thmnote}
+
+\declaretheoremstyle[
+  numbered = no, mdframed={
+    linewidth=2pt,rightline=false,topline=false,linecolor=eqn, backgroundcolor=eqn!15
+  }
+]{thmeqn}
+
+\declaretheoremstyle[
+  numbered = no, mdframed={
+    linewidth=2pt,rightline=false,topline=false,linecolor=exam, backgroundcolor=exam!15
+  }
+]{thmexm}
+
+\declaretheoremstyle[
+  numbered = no, mdframed={
+    linewidth=2pt,rightline=false,topline=false,linecolor=intu, backgroundcolor=intu!15
+  }
+]{thmintu}
+
+\declaretheoremstyle[
+  numbered = no, mdframed={
+    linewidth=2pt,rightline=false,topline=false,linecolor=thmline, backgroundcolor=thmin!15
+  }
+]{thmthm}
+
+\declaretheoremstyle[
+  numbered = no, mdframed={
+    linewidth=2pt,rightline=false,topline=false,linecolor=lemma, backgroundcolor=lemma!15
+  }
+]{thmlem}
+
+\declaretheorem[style = thmdef, name = Formal Definition]{Definition}
+\declaretheorem[style = thmeqn, name = Equation]{Equation}
+\declaretheorem[style = thmexm, name = Example]{Example}
+\declaretheorem[style = thmintu, name = Intuitive Definition]{Intuition}
+\declaretheorem[style = thmthm, name = Theorem]{Thm}
+\declaretheorem[style = thmnote, name = Note]{Note}
+\declaretheorem[style = thmlem, name = Lemma]{Lemma}
+
+%Lectures class adds a leading 0 to section and so on, so get rid of that
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+
+\begin{document}
+\title{CSE 491 Lecture Notes}
+
+\thispagestyle{empty}
+
+\begin{center}
+  {\LARGE \bf CSE 474 Lecture Notes}\\
+  {\large Introduction to Machine Learning}\\
+  Fall 2022
+\end{center}
+\begin{multicols}{2}
+  \section*{Color Key}
+  \begin{tabular}{|c|}
+    \hline
+    \colorbox{defn}{\textbf{Formal Definition}}\\
+    \hline
+    \colorbox{exam}{\textbf{Example}}\\
+    \hline
+  \end{tabular}
+
+  \section*{Important Dates}
+  \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Assignment} & \textbf{Date} \\
+    \hline
+
+  \end{tabular}
+\end{multicols}
+
+\setcounter{section}{0}
+\tableofcontents
+\pagebreak
+\section{}
+\end{document}

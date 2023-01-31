@@ -1,0 +1,5 @@
+#!/bin/bash
+
+picom &
+sh .screenlayout/default.sh &
+nitrogen --restore &

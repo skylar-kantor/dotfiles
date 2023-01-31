@@ -1,0 +1,141 @@
+
+
+;; Disable unused UI elements
+;; Don't show startup screen, we don't need it
+(setq inhibit-startup-message t)
+
+;;Disable GUI features we're not using
+(menu-bar-mode -1)
+
+;;Highlight the current line
+;;(global-hl-line-mode t)
+
+;;Show line number
+(line-number-mode t)
+
+;;Show  clock in the mode line
+(display-time-mode 1)
+
+
+;; BETTER DEFAULTS
+;; Display column number in mode line.
+(column-number-mode t)
+
+;; Automatically update buffers if file content on the disk has changed.
+(global-auto-revert-mode t)
+
+;; `C-x o' is a 2 step key binding. `M-o' is much easier.
+(global-set-key (kbd "M-o") 'other-window)
+
+;; Emacs can automatically create backup files. This tells Emacs to put all backups in
+ ;; ~/.emacs.d/backups. More info:
+ ;; http://www.gnu.org/software/emacs/manual/html_node/elisp/Backup-Files.html
+(setq backup-directory-alist '(("." . "~/.config/emacs/backups")))
+(with-eval-after-load 'tramp
+(add-to-list 'tramp-backup-directory-alist
+             (cons tramp-file-name-regexp nil)))
+
+(setq delete-old-versions -1)
+(setq version-control t)
+(setq vc-make-backup-files t)
+(setq auto-save-file-name-transforms '((".*" "~/.config/emacs/auto-save-list/" t)))
+
+
+;;PACKAGES
+;; Require and initialize `package`.
+(require 'package)
+
+;; Add `melpa` to `package-archives`.
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
+
+(package-initialize)
+
+(use-package winner
+  :defer t)
+
+
+
+;; Do not use a different background color for comments.
+(setq spacemacs-theme-comment-bg nil)
+
+;; Comments should appear in italics.
+(setq spacemacs-theme-comment-italic t)
+
+
+
+
+;; Use the `spacemacs-dark` theme.
+(use-package spacemacs-common
+    :ensure spacemacs-theme)
+
+(setq global-sompany-dely 0.3)
+(global-company-mode t)
+
+;;Theming
+(set-background-color "#242c39")
+(set-cursor-color "#a2b3b3")
+(set-foreground-color "#ecdacc")
+;;(set-default-font "lucidasanstypewriter-14")
+
+;;MACROS
+
+;;Only define macros we need for the major mode we're in
+;;Latex
+(if (eq major-mode 'tex)
+    ;;Enviornments
+    (fset 'definition
+	  (kmacro-lambda-form [?\\ ?b ?e ?g ?i ?n ?  ?\{ ?D ?e ?f ?i ?n ?i ?t ?i ?o ?n ?\} ?  ?\[ ?\] ?\C-m ?\C-m ?\\ ?e ?n ?d ?\{ ?D ?e ?f ?i ?n ?i ?t ?i ?o ?n ?\} ?\{ ?\C-?] 0 "%d"))
+
+  (fset 'example
+	(kmacro-lambda-form [?\\ ?b ?e ?g ?i ?n ?\{ ?E ?x ?a ?m ?p ?l ?e ?\} ?  ?\[ ?\] ?\C-m ?\\ ?e ?n ?d ?\{ ?E ?x ?a ?m ?p ?k ?e ?\C-? ?\C-? ?l ?e ?\}] 0 "%d"))
+  
+  (fset 'equation
+   (kmacro-lambda-form [?\\ ?b ?e ?g ?i ?n ?\{ ?E ?q ?u ?a ?t ?i ?o ?n ?\} ?\[ ?\] ?\C-m ?\\ ?e ?n ?d ?\C-? ?\C-? ?\C-? ?\C-? ?\C-m ?\\ ?e ?n ?d ?\{ ?E ?q ?u ?a ?t ?i ?o ?n ?\}] 0 "%d"))
+
+  (fset 'intuition
+   (kmacro-lambda-form [?\\ ?b ?e ?g ?i ?n ?\{ ?I ?n ?t ?u ?i ?t ?i ?o ?n ?\} ?\[ ?\] ?\C-m ?\\ ?e ?n ?d ?\{ ?i ?n ?t ?u ?i ?\C-? ?\C-? ?\C-? ?\C-? ?\C-? ?I ?n ?t ?u ?i ?t ?i ?o ?n ?\} ?\C-\[ ?\[ ?1 ?\; ?5 ?D ?\C-\[ ?\[ ?1 ?\; ?5 ?D ?\C-\[ ?O ?D ?\C-m] 0 "%d"))
+
+  ;;Text styles
+  (fset 'bold
+   (kmacro-lambda-form [?\\ ?t ?e ?x ?t ?b ?f ?\{ ?\}] 0 "%d"))
+
+  (fset 'ital
+   (kmacro-lambda-form [?\\ ?t ?e ?x ?t ?i ?t ?\{ ?\}] 0 "%d"))
+
+  (fset 'texttt
+   (kmacro-lambda-form [?\\ ?t ?e ?x ?t ?t ?t ?\{ ?\}] 0 "%d"))
+
+  (fset 'uline
+   (kmacro-lambda-form [?\\ ?u ?n ?d ?e ?r ?l ?i ?n ?e ?\{ ?\}] 0 "%d"))  
+  )
+
+;;C
+
+
+;;Python
+
+;;HTML
+
+;;CSS
+
+;;Java
+  
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes '(skylar))
+ '(custom-safe-themes
+   '("15609c42487cd4189b321995f728926c4cc0661ca79691875b48eaff8bdebb2c" "323201f226bd9215f616a38d170afc945f27cd28d7d0094380b237f7a8a69ab1" "493314aea5f38d5f74de9179d4082b3750c4b65501c8d6c26207976a23fc9f5d" "d2af2c85a7a051a36aa933a1f1f4af2c463080d2d86550581efdd6269cd2c905" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default))
+ '(package-selected-packages '(powerline yasnippet use-package spacemacs-theme company)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(font-lock-comment-face ((t (:foreground "#97b7bc" :slant italic))))
+ '(font-lock-string-face ((t (:foreground "#adc463"))))
+ '(hl-line ((t (:extend t :background "#66717b")))))
+
